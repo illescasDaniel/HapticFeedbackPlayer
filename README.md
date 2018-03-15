@@ -13,7 +13,7 @@ HapticFeedback()
 ```
 
 ```swift
-HapticFeedback()
+HapticFeedback(after: .milliseconds(100))
     .selectionChanged.then(after: .milliseconds(200))
 .replay(times: 3)
 ```

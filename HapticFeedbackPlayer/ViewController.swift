@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 	}
 	
 	@IBAction func customHaptic2Action(_ sender: UIButton) {
-		HapticFeedback()
+		HapticFeedback(after: .milliseconds(100))
 			.selectionChanged.then(after: .milliseconds(200))
 		.replay(times: 3)
 	}
