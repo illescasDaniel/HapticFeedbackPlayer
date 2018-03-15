@@ -12,6 +12,8 @@
 		65389766205A883000941DD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65389764205A883000941DD6 /* Main.storyboard */; };
 		65389768205A883000941DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65389767205A883000941DD6 /* Assets.xcassets */; };
 		6538976B205A883000941DD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65389769205A883000941DD6 /* LaunchScreen.storyboard */; };
+		65389773205A883F00941DD6 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65389772205A883F00941DD6 /* HapticFeedback.swift */; };
+		65389777205A896700941DD6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 65389776205A896700941DD6 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,9 @@
 		65389767205A883000941DD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6538976A205A883000941DD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6538976C205A883000941DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65389772205A883F00941DD6 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
+		65389775205A88EB00941DD6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		65389776205A896700941DD6 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +43,8 @@
 		65389754205A883000941DD6 = {
 			isa = PBXGroup;
 			children = (
+				65389776205A896700941DD6 /* LICENSE */,
+				65389775205A88EB00941DD6 /* README.md */,
 				6538975F205A883000941DD6 /* HapticFeedbackPlayer */,
 				6538975E205A883000941DD6 /* Products */,
 			);
@@ -54,6 +61,7 @@
 		6538975F205A883000941DD6 /* HapticFeedbackPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				65389774205A884A00941DD6 /* Models */,
 				65389760205A883000941DD6 /* AppDelegate.swift */,
 				65389762205A883000941DD6 /* ViewController.swift */,
 				65389764205A883000941DD6 /* Main.storyboard */,
@@ -62,6 +70,14 @@
 				6538976C205A883000941DD6 /* Info.plist */,
 			);
 			path = HapticFeedbackPlayer;
+			sourceTree = "<group>";
+		};
+		65389774205A884A00941DD6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65389772205A883F00941DD6 /* HapticFeedback.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +141,7 @@
 			files = (
 				6538976B205A883000941DD6 /* LaunchScreen.storyboard in Resources */,
 				65389768205A883000941DD6 /* Assets.xcassets in Resources */,
+				65389777205A896700941DD6 /* LICENSE in Resources */,
 				65389766205A883000941DD6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65389773205A883F00941DD6 /* HapticFeedback.swift in Sources */,
 				65389763205A883000941DD6 /* ViewController.swift in Sources */,
 				65389761205A883000941DD6 /* AppDelegate.swift in Sources */,
 			);
@@ -277,8 +295,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PRK6268SLD;
 				INFOPLIST_FILE = HapticFeedbackPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.illescasDaniel.HapticFeedbackPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.illescas-Daniel.HapticFeedbackPlayer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -292,8 +311,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PRK6268SLD;
 				INFOPLIST_FILE = HapticFeedbackPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.illescasDaniel.HapticFeedbackPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.illescas-Daniel.HapticFeedbackPlayer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
