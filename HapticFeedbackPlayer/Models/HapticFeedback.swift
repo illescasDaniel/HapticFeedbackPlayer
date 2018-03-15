@@ -153,6 +153,8 @@ class HapticFeedback {
 			
 			self.accumulatedTime += self.lastInterval
 		}
+		
+		self.play()
 	}
 	
 	func replay(times: UInt, withInterval interval: DispatchTimeInterval) -> HapticFeedback {
