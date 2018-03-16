@@ -47,28 +47,28 @@ class HapticFeedback {
 	
 	class FeedbackGenerator {
 		
-		static let lightImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
-		static let mediumImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
-		static let heavyImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
-		static let notificationFeedbackGenerator = UINotificationFeedbackGenerator()
-		static let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+		static let lightImpact = UIImpactFeedbackGenerator(style: .light)
+		static let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
+		static let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
+		static let notification = UINotificationFeedbackGenerator()
+		static let selection = UISelectionFeedbackGenerator()
 		
 		fileprivate init() {}
 		
 		static func impactOcurredWith(style: UIImpactFeedbackStyle) {
 			switch(style) {
-			case .light: FeedbackGenerator.lightImpactFeedbackGenerator.impactOccurred()
-			case .medium: FeedbackGenerator.mediumImpactFeedbackGenerator.impactOccurred()
-			case .heavy: FeedbackGenerator.heavyImpactFeedbackGenerator.impactOccurred()
+			case .light: FeedbackGenerator.lightImpact.impactOccurred()
+			case .medium: FeedbackGenerator.mediumImpact.impactOccurred()
+			case .heavy: FeedbackGenerator.heavyImpact.impactOccurred()
 			}
 		}
 		
 		static func notificationOcurredOf(type: UINotificationFeedbackType) {
-			FeedbackGenerator.notificationFeedbackGenerator.notificationOccurred(type)
+			FeedbackGenerator.notification.notificationOccurred(type)
 		}
 		
 		static func selectionChanged() {
-			FeedbackGenerator.selectionFeedbackGenerator.selectionChanged()
+			FeedbackGenerator.selection.selectionChanged()
 		}
 	}
 	
@@ -86,7 +86,7 @@ class HapticFeedback {
 		
 		self.lastHaptic = .selectionChanged
 		
-		FeedbackGenerator.selectionFeedbackGenerator.prepare()
+		FeedbackGenerator.selection.prepare()
 		
 		DispatchQueue.main.asyncAfter(deadline: self.accumulatedTime) {
 			FeedbackGenerator.selectionChanged()
@@ -97,9 +97,9 @@ class HapticFeedback {
 	func impactOcurredWith(style: UIImpactFeedbackStyle) -> HapticFeedback {
 		
 		switch style {
-		case .light: FeedbackGenerator.lightImpactFeedbackGenerator.prepare(); self.lastHaptic = .lightImpact
-		case .medium: FeedbackGenerator.mediumImpactFeedbackGenerator.prepare(); self.lastHaptic = .mediumImpact
-		case .heavy: FeedbackGenerator.heavyImpactFeedbackGenerator.prepare(); self.lastHaptic = .heavyImpact
+		case .light: FeedbackGenerator.lightImpact.prepare(); self.lastHaptic = .lightImpact
+		case .medium: FeedbackGenerator.mediumImpact.prepare(); self.lastHaptic = .mediumImpact
+		case .heavy: FeedbackGenerator.heavyImpact.prepare(); self.lastHaptic = .heavyImpact
 		}
 		
 		DispatchQueue.main.asyncAfter(deadline: self.accumulatedTime) {
@@ -116,7 +116,7 @@ class HapticFeedback {
 		case .warning: self.lastHaptic = .notificationWarning
 		}
 		
-		FeedbackGenerator.notificationFeedbackGenerator.prepare()
+		FeedbackGenerator.notification.prepare()
 		
 		DispatchQueue.main.asyncAfter(deadline: self.accumulatedTime) {
 			FeedbackGenerator.notificationOcurredOf(type: type)
